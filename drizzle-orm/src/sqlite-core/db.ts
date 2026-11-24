@@ -22,7 +22,7 @@ type AnyConstructor = new(...args: any[]) => any;
  * The builder classes of a runtime, which a {@link SQLiteDatabase}'s methods construct: `SQLiteAsync*` classes resolve
  * as Promises (`SQLiteSync*` ones also run synchronously), `SQLiteEffect*` ones run as Effects
  */
-export interface SQLiteDatabaseBuilders {
+interface SQLiteDatabaseBuilders {
 	readonly select: AnyConstructor;
 	readonly insert: AnyConstructor;
 	readonly update: AnyConstructor;
@@ -31,6 +31,9 @@ export interface SQLiteDatabaseBuilders {
 	readonly raw: AnyConstructor;
 	readonly relationalQuery: SQLiteRelationalQueryConstructor;
 }
+
+/** @internal */
+export type { SQLiteDatabaseBuilders };
 
 /**
  * A database of every runtime. it's methods are written once, over the runtime's {@link SQLiteDatabaseBuilders}: each

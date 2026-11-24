@@ -40,7 +40,7 @@ type AnyConstructor = new(...args: any[]) => any;
  * The builder classes of a runtime, which a {@link PgDatabase}'s methods construct: `PgAsync*` classes resolve as
  * Promises, `PgEffect*` ones run as Effects
  */
-export interface PgDatabaseBuilders {
+interface PgDatabaseBuilders {
 	readonly select: AnyConstructor;
 	readonly insert: AnyConstructor;
 	readonly update: AnyConstructor;
@@ -50,6 +50,9 @@ export interface PgDatabaseBuilders {
 	readonly refreshMaterializedView: AnyConstructor;
 	readonly relationalQuery: PgRelationalQueryConstructor;
 }
+
+/** @internal */
+export type { PgDatabaseBuilders };
 
 /**
  * A database of either runtime. it's methods are written once, over the runtime's {@link PgDatabaseBuilders}: each

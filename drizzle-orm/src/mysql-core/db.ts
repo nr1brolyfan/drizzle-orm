@@ -24,7 +24,7 @@ type AnyConstructor = new(...args: any[]) => any;
  * The builder classes of a runtime, which a {@link MySqlDatabase}'s methods construct: `MySqlAsync*` classes resolve
  * as Promises, `MySqlEffect*` ones run as Effects
  */
-export interface MySqlDatabaseBuilders {
+interface MySqlDatabaseBuilders {
 	readonly select: AnyConstructor;
 	readonly insert: AnyConstructor;
 	readonly update: AnyConstructor;
@@ -33,6 +33,9 @@ export interface MySqlDatabaseBuilders {
 	readonly raw: AnyConstructor;
 	readonly relationalQuery: MySqlRelationalQueryConstructor;
 }
+
+/** @internal */
+export type { MySqlDatabaseBuilders };
 
 /** The column list of `insert(table, ...columns)`: it must name every required column */
 export type MySqlInsertColumns<
