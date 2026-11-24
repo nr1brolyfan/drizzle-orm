@@ -19,7 +19,6 @@ import type { SQLiteViewBase } from './view-base.ts';
 type AnyConstructor = new(...args: any[]) => any;
 
 /**
- * @internal
  * The builder classes of a runtime, which a {@link SQLiteDatabase}'s methods construct: `SQLiteAsync*` classes resolve
  * as Promises (`SQLiteSync*` ones also run synchronously), `SQLiteEffect*` ones run as Effects
  */

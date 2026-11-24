@@ -37,7 +37,6 @@ export type PgInsertColumns<
 type AnyConstructor = new(...args: any[]) => any;
 
 /**
- * @internal
  * The builder classes of a runtime, which a {@link PgDatabase}'s methods construct: `PgAsync*` classes resolve as
  * Promises, `PgEffect*` ones run as Effects
  */

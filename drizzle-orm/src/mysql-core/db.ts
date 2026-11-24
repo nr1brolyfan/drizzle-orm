@@ -21,7 +21,6 @@ import type { MySqlView } from './view.ts';
 type AnyConstructor = new(...args: any[]) => any;
 
 /**
- * @internal
  * The builder classes of a runtime, which a {@link MySqlDatabase}'s methods construct: `MySqlAsync*` classes resolve
  * as Promises, `MySqlEffect*` ones run as Effects
  */
